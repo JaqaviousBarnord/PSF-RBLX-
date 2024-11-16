@@ -1,0 +1,191 @@
+local library = loadstring(game:HttpGet("https://github.com/GoHamza/AppleLibrary/blob/main/main.lua?raw=true"))()
+
+
+local window = library:init("Philly Streetz Fucka", true, Enum.KeyCode.RightShift, true)
+
+window:Divider('Average...')
+
+local sectionA = window:Section("Misc")
+
+sectionA:Divider("Player")
+
+sectionA:Button("Player Inf Jump", function()
+   local LocalP = game:GetService("Players").LocalPlayer
+local Uis = game:GetService("UserInputService")
+local Infjump = true 
+Uis.JumpRequest:Connect(function()
+    if Infjump == true and LocalP.Character then 
+        LocalP.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+    end
+end)
+end)
+
+sectionA:Button("Player Inf Health", function()
+   game.Player.LocalPlayer.Health.Value = 900
+end)
+sectionA:Button("Player Noclip", function()
+   
+end)
+
+sectionA:Button("Player Anti Ban", function()
+   
+end)
+
+sectionA:Button("Player Anti Lag", function()
+   -- Roblox FPS Boost Script
+ 
+-- Disable unnecessary graphics settings
+game.StarterGui:SetCore("TopbarEnabled", false)
+game.Workspace.CurrentCamera.FieldOfView = 70
+ 
+-- Adjust graphics settings
+game.GraphicsQuality = Enum.QualityLevel.Level2
+ 
+-- Disable shadows
+for _, descendant in pairs(game.Workspace:GetDescendants()) do
+    if descendant:IsA("ShadowMap") then
+        descendant:Destroy()
+    end
+end
+ 
+-- Adjust render distance
+game.Workspace.CurrentCamera.ClipsDescendants = true
+game.Workspace.CurrentCamera.NearClipPlane = 0.1
+game.Workspace.CurrentCamera.FarClipPlane = 256
+ 
+-- Reduce particle effects
+for _, descendant in pairs(game.Workspace:GetDescendants()) do
+    if descendant:IsA("ParticleEmitter") then
+        descendant.Enabled = false
+    end
+end
+ 
+-- Disable unnecessary scripts
+for _, descendant in pairs(game:GetDescendants()) do
+    if descendant:IsA("Script") or descendant:IsA("LocalScript") then
+        descendant.Disabled = true
+    end
+end
+
+end)
+
+sectionA:Button("Player Swim", function()
+   
+end)
+
+sectionA:Button("Player Invisible", function()
+   
+end)
+
+sectionA:Button("Frame Per Second", function()
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.CoreGui -- Parent it to CoreGui for executors
+
+-- Create Frame
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 150, 0, 50) -- Frame size
+frame.Position = UDim2.new(0, 10, 1, -60) -- Bottom-left corner, 10px offset
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30) -- Dark gray background
+frame.BorderSizePixel = 0 -- No border
+frame.ClipsDescendants = true -- Ensure effects don't spill outside
+frame.Parent = screenGui
+
+-- Add Flame Effect using ImageLabel
+local flameEffect = Instance.new("ImageLabel")
+flameEffect.Size = UDim2.new(1, 20, 1, 20) -- Slightly larger than the frame
+flameEffect.Position = UDim2.new(-0.05, 0, -0.05, 0) -- Center over the frame
+flameEffect.BackgroundTransparency = 1 -- Fully transparent background
+flameEffect.Image = "rbxassetid://3010580126" -- Replace with your flame texture ID
+flameEffect.ImageColor3 = Color3.fromRGB(255, 100, 0) -- Flame color
+flameEffect.ImageTransparency = 0.2 -- Slight transparency for a subtle look
+flameEffect.Parent = frame
+
+-- Animate Flame Effect
+local RunService = game:GetService("RunService")
+RunService.RenderStepped:Connect(function(deltaTime)
+    flameEffect.Rotation = flameEffect.Rotation + deltaTime * 30 -- Rotate the flame effect
+end)
+
+-- Create FPS Label
+local fpsLabel = Instance.new("TextLabel")
+fpsLabel.Size = UDim2.new(1, 0, 1, 0) -- Fill the frame
+fpsLabel.BackgroundTransparency = 1 -- Transparent background
+fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- White text
+fpsLabel.Font = Enum.Font.SourceSansBold -- Font style
+fpsLabel.TextSize = 20 -- Font size
+fpsLabel.Text = "FPS: 0" -- Initial text
+fpsLabel.Parent = frame
+
+-- Update FPS
+local lastTime = tick()
+local frames = 0
+
+RunService.RenderStepped:Connect(function()
+    frames = frames + 1
+    local currentTime = tick()
+    if currentTime - lastTime >= 1 then
+        local fps = frames / (currentTime - lastTime)
+        fpsLabel.Text = string.format("FPS: %.0f", fps)
+        lastTime = currentTime
+        frames = 0
+    end
+end)
+
+end)
+
+sectionA:Label("Philly Streetz Is Trash 🗑️🚮")
+
+sectionA:Switch("Player Spin", false, function(a)
+   game.Players.LocalPlayer:Kick('Banned For Exploiting| Unban Date: July 9, 2032 6:30 PM')
+end)
+
+sectionA:TextField("Player WalkSpeed", "Enter Speed Here...", function(a)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (a)
+end)
+sectionA:TextField("Player JumpPower", "Enter Power Here...", function(a)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower= (a)
+end)
+
+
+
+window:Divider("Payed Acess")
+
+local sectionB = window:Section("Premium")
+
+sectionB:Divider("Fucking Ruin This Game")
+
+sectionB:Button("Kick", function()
+   window:TempNotify("Kicking!", "We are going Kick in (s) Seconds", "rbxassetid://12608259004")
+   wait(3)
+   Player:Kick('Told Ya!')
+end)
+
+sectionB:Button("Infinite Money", function() window:Notify("Working On It!", "Infinite Cash... Which Can Be Transfered To Bank✈️", "Accept", "rbxassetid://12608259004",
+   function()
+    game.Players.LocalPlayer.Settings:SetAttribute("Cash", 908712)
+
+   end)
+end)
+
+sectionB:Button("Reload Stamina", function() window:Notify("Working On It!", "Stamina Reload... Everytime Your Low Press This.....", "Accept", "rbxassetid://12608259004",
+   function()
+    
+
+   end)
+end)
+
+sectionB:Button("Notification 2", function() window:Notify2("Hello!", "I am notification", "Button 1", "Button 2", "rbxassetid://12608259004",
+   function()
+       print(1)
+   end,
+   function()
+       print(2)
+   end)
+end)
+
+window:GreenButton(function()
+   print("You clicked the green button!")
+end)
+
+sectionA:Select()
