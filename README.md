@@ -1,4 +1,4 @@
-PSF.lua
+ PSF.lua
 🎮 Powerful Script Framework for Roblox
 A versatile and lightweight script designed to enhance your Roblox experience.
 
@@ -21,13 +21,16 @@ Streamlined and efficient code for a smooth experience.
 💬 Examples
 Here’s how to get started:
 
-	lua
-	Copy code
-	-- Load the script
-	local psf = loadstring(game:HttpGet("https://your-repository-link/PSF.lua"))()
-	
-	-- Example feature usage
-	psf:EnableFeature("CoolFeature")
+	## 📜 Code Example
+
+Here’s how you can load the script:
+
+```lua
+-- Load the script
+local psf = loadstring(game:HttpGet("https://your-repository-link/PSF.lua"))()
+
+-- Example feature usage
+psf:Kick("Player")
 ❗ Disclaimer
 This script is for educational purposes only. The author is not responsible for any misuse or violations of Roblox's terms of service.
 
