@@ -27,7 +27,7 @@ Here’s how you can load the script:
 
 ```lua
 -- Load the script
-local psf =  loadstring(game:HttpGet("https://github.com/JaqaviousBarnord/PSF-RBLX-/raw/main/PSF.lua"))()
+local psf =  loadstring(game:HttpGet("https://github.com/JaqaviousBarnord/PSF-RBLX-/raw/main/PSF.lua.txt"))()
 
 -- Example feature usage
 psf:Kick("Player")
